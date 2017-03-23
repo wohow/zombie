@@ -1,0 +1,6 @@
+build/
+library/
+local/
+packages/
+temp/
+logs/
