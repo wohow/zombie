@@ -1,0 +1,10 @@
+{
+  "name": "zombie-server1",
+  "version": "0.0.1",
+  "private": false,
+  "dependencies": {
+    "async": "^2.1.5",
+    "crc": "^3.4.4",
+    "pomelo": "^2.2.5"
+  }
+}
