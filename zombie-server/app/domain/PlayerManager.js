@@ -4,7 +4,7 @@
 var Player = require('./Player');
 
 /**
- * 游戏总管理
+ * 玩家管理中心
  */
 var exp = module.exports;
 
@@ -16,6 +16,7 @@ exp.createPlayer = function (uid, nickname, sid) {
 		sid: sid,
 		nickname: nickname
 	});
+	// 放入玩家列表
 	players[uid] = player;
 	return player;
 };
@@ -33,10 +34,21 @@ exp.nameIsExist = function (nickname) {
 	return false;
 }
 
+// 返回所有玩家uids用于同步
+exp.toUids = function (ignore) {
+	var uids = [];
+	for(var key in players){
+		var value = players[key];
+		if(value.uid === ignore)
+			continue;
+		uids.push({uid: value.uid, sid: value.sid});
+	}
+	return uids;
+};
 
 // 退出游戏
 exp.userLeave = function (uid) {
 	var player = players[uid];
 	delete players[uid];
 	return player;
-}
+};

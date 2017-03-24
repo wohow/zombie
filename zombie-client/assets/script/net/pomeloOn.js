@@ -2,6 +2,7 @@
 var net = require('net');
 var EventDispatcher = require('EventDispatcher');
 var EventType = require('EventType');
+var global = require('global');
 
 cc.Class({
     extends: cc.Component,
@@ -14,6 +15,49 @@ cc.Class({
     },
 
     start: function () {
-        
+        // 刷新服务器总人数
+        net.on('onUpdateSumPeople', function(data){
+            global.sumPeople = data.sumPeople;
+            EventDispatcher.dispatch(EventType.ON_UPDATESUMPEOPLE);
+        });
+
+        // 有人创建房间
+        net.on('onCreateRoom', function(data){
+        	global.rooms.push(data.room);
+        	EventDispatcher.dispatch(EventType.ON_CREATEROOM, data.room);
+        })
+
+        // 刷新房间信息
+        net.on('onUpdateRoom', function (data) {
+            var room = global.getRoom(data.roomId);
+            if(!room){
+                return;
+            }
+            switch(data.status){
+                case 0:// 加入
+                    room.players.push(data.player);
+                break;
+                case 1:// 清空
+                    global.removeRoom(data.roomId);
+                break;
+                case 2:// 有人退出
+                    for (var i = room.players.length - 1; i >= 0; i--) {
+                        if(room.players[i].uid === data.uid){
+                            room.players.splice(i, 1);
+                            break;
+                        }
+                    }
+                    if(data.captainUid){
+                        room.captainUid = data.captainUid;
+                    }
+                break;
+            }
+            EventDispatcher.dispatch(EventType.ON_UPDATEROOM, {room: room, data: data});
+        });
+        // 聊天
+        net.on('onChatMsg', function(data) {
+            EventDispatcher.dispatch(EventType.ON_CHATMSG, data);
+        });
+
     }
 });

@@ -1,7 +1,12 @@
 'use strict';
 
 var crc = require('crc');
+var async = require('async');
+var code = require('../../../consts/code');
+var MessageService = require('../../../services/MessageService');
 var PlayerManager = require('../../../domain/PlayerManager');
+var RoomManager = require('../../../domain/RoomManager');
+var RoomControl = require('../../../domain/RoomControl');
 
 module.exports = function(app) {
   	return new Handler(app);
@@ -10,18 +15,6 @@ module.exports = function(app) {
 var Handler = function(app) {
   	this.app = app;
   	this.sid = app.get('serverId');
-};
-
-/**
- * New client entry.
- *
- * @param  {Object}   msg     request message
- * @param  {Object}   session current session object
- * @param  {Function} next    next step callback
- * @return {Void}
- */
-Handler.prototype.entry = function(msg, session, next) {
-  next(null, {code: 200, msg: 'game server is ok.'});
 };
 
 /**
@@ -48,7 +41,7 @@ Handler.prototype.login = function(msg, session, next) {
 		}, function(cb){
 
 			// bind
-			session.bind(deviceID, cb);
+			session.bind(player.uid, cb);
 		}
 	], function(err, result){
 		if(err){
@@ -59,7 +52,11 @@ Handler.prototype.login = function(msg, session, next) {
 		session.on('closed', userLeave.bind(null, self.app));
 		// 
 		console.log(player.nickname, ' 进入游戏');
-		next(null, {code: code.OK, player: player.strip(), rooms: });
+
+		var usds = PlayerManager.toUids(player.uid);
+
+		next(null, {code: code.OK, player: player.strip(), rooms: RoomManager.toRooms(), sumPeople: usds.length+1});
+		MessageService.pushMessageByUids(usds, 'onUpdateSumPeople', {sumPeople: usds.length+1});
 	});
 };
 
@@ -73,7 +70,13 @@ function userLeave(app, session){
 	if(!player){
 		return;
 	}
-	console.log(player.nickname, ' 退出游戏');
 	// 还有在房间里面退出
-	
+	var room = RoomManager.getRoom(player.roomId);
+	if(room){
+		RoomControl.exitRoom(room, player);
+	}
+
+	var usds = PlayerManager.toUids();
+	MessageService.pushMessageByUids(usds, 'onUpdateSumPeople', {sumPeople: usds.length});
+	console.log(player.nickname, ' 退出游戏');
 }
