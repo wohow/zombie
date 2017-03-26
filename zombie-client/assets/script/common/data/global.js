@@ -6,6 +6,7 @@ var exp = module.exports;
 // 玩家信息
 exp.uid = '';
 exp.nickname = '';
+exp.heroId = 0;// 英雄ID
 exp.roomId = 0;
 
 // 当前服务器总人数
@@ -39,4 +40,10 @@ exp.removeRoom = function (id) {
 // 获取当前房间信息
 exp.getCurRoom = function () {
 	return this.getRoom(this.roomId);
+};
+
+// 获取房间的玩家信息
+exp.getRoomPlayer = function (room, uid) {
+	var arr = room.players.filter((m)=> m.uid === uid);
+	return arr.length === 0 ? null : arr[0];
 };

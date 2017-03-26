@@ -12,7 +12,6 @@ module.exports = function(app) {
 
 var Handler = function(app) {
   	this.app = app;
-  	this.sid = app.get('serverId');
 };
 
 /**
@@ -96,5 +95,52 @@ Handler.prototype.sendChat = function(msg, session, next) {
 	var room = RoomManager.getRoom(player.roomId);
 	if(room){
 		MessageService.pushMessageByUids(room.toUids(), 'onChatMsg', {id: msg.id, nickname: player.nickname, content: msg.content});
+	}
+};
+
+/**
+ * 发起开始游戏
+ */
+Handler.prototype.startGame = function(msg, session, next) {
+	var player = PlayerManager.getPlayer(session.uid);
+	var room = RoomManager.getRoom(player.roomId);
+	if(!room){
+		next(null, {code: code.FAIL, error: '房间不存在'});
+		return;
+	}
+
+	// 这里还不是真正开始游戏 想让玩家加载游戏 不过先把状态设置成游戏状态
+	room.status = 1;
+	// 同步玩家加载游戏
+	MessageService.pushMessageByUids(room.toUids(), 'onLoadGame', {});
+	// 同步其他玩家 改变房间状态
+	MessageService.pushMessageByUids(PlayerManager.toUids(), 'onUpdateRoom', {roomId: room.id, status: 3, roomStatus: room.status});// 刷新房间状态
+};
+
+/**
+ * 游戏加载完成
+ */
+Handler.prototype.gameLoadComplete = function(msg, session, next) {
+	var player = PlayerManager.getPlayer(session.uid);
+	var room = RoomManager.getRoom(player.roomId);
+	if(!room){
+		next(null, {code: code.FAIL, error: '房间不存在'});
+		return;
+	}
+	next(null, {time: msg.time});
+	
+	// 修改状态
+	var p = room.getPlayer(player.uid);
+	p.status = 1;
+
+	// 同步玩家加载游戏
+	MessageService.pushMessageByUids(room.toUids(), 'onUpdateLoadGame', {uid: player.uid, status: p.status});
+	
+	// 检查是否可以开始游戏了 
+	if(room.isAllLoadComplete() && room.status === 1){
+		room.status = 2;
+		setTimeout(function(){
+			RoomControl.startupGame(room);// 启动游戏
+		}, 1000);
 	}
 };

@@ -16,7 +16,8 @@ cc.Class({
         roomnameTxt: cc.Label,
         mapnameTxt: cc.Label,
         peoplesTxt: cc.Label,
-        statusTxt: cc.Label
+        statusTxt: cc.Label,
+        joinBtnNode: cc.Node,
     },
 
     init: function (data) {
@@ -25,8 +26,10 @@ cc.Class({
         this.roomnameTxt.string = data.roomname;
         this.mapnameTxt.string = consts.MAP_NAME[data.mapId];
         this.peoplesTxt.string = data.players.length;
-        this.statusTxt.string = consts.STATUS_NAME[data.status];
-        this.statusTxt.node.color = consts.STATUS_COLOR[data.status];
+        var isStatus = (data.status === 0);
+        this.statusTxt.string = isStatus ? consts.STATUS_NAME[0] : consts.STATUS_NAME[1];
+        this.statusTxt.node.color = isStatus ? consts.STATUS_COLOR[0] : consts.STATUS_COLOR[1];
+        this.joinBtnNode.active = isStatus;
     },
 
     // 点击加入

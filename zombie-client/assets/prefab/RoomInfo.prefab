@@ -813,6 +813,9 @@
     },
     "statusTxt": {
       "__id__": 15
+    },
+    "joinBtnNode": {
+      "__id__": 17
     }
   },
   {

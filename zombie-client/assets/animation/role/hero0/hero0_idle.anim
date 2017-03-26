@@ -1,0 +1,43 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "hero0_idle",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.6666666666666666,
+  "sample": 6,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "d3feb0b6-65e3-4c0d-bfd2-315bea363970"
+            }
+          },
+          {
+            "frame": 0.16666666666666666,
+            "value": {
+              "__uuid__": "205a79c0-9e39-408f-a5a4-9ab106e388ab"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "3dd310cb-5e98-4a67-b510-bc853ee52bd7"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "dc3aca3c-6e4f-4fe1-9390-dccef6a72232"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

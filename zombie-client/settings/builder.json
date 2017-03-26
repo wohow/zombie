@@ -1,0 +1,24 @@
+{
+  "appKey": "",
+  "appSecret": "",
+  "excludeScenes": [],
+  "includeAnySDK": false,
+  "includeSdk": [
+    "anysdk"
+  ],
+  "inlineSpriteFrames": true,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.zombie-client",
+  "privateKey": "",
+  "renderMode": "0",
+  "startScene": "d93adaaa-e836-411d-bb08-448d4413046d",
+  "title": "zombie-client",
+  "webOrientation": "landscape"
+}

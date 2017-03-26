@@ -45,6 +45,7 @@ cc.Class({
             switch(data.status){
                 case 0:// 加入
                 case 2:// 有人退出
+                case 3:// 刷新状态
                     self.listUI.updateRoom(room);
                 break;
                 case 1:// 清空

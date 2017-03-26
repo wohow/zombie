@@ -43,6 +43,9 @@ cc.Class({
             self.curNode.active = true;
         };
         EventDispatcher.listen(EventType.OPEN_LISTUI, self.openlistuiCB);
+
+        // 这里先预加载 加载场景
+        cc.director.preloadScene('preload');
     },
 
     onDestroy: function () {

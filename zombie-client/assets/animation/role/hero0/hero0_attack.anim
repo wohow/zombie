@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "hero0_attack",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.25,
+  "sample": 20,
+  "speed": 1,
+  "wrapMode": 0,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "dc5425ad-ab38-4e6f-95e6-87b6206fe308"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "9de9e978-8d28-4e16-bc82-1bd2016561a5"
+            }
+          },
+          {
+            "frame": 0.1,
+            "value": {
+              "__uuid__": "75e60f10-5505-4038-958e-7648f02b30d8"
+            }
+          },
+          {
+            "frame": 0.15,
+            "value": {
+              "__uuid__": "f382bd66-e1a9-46ea-9a73-e521f4899977"
+            }
+          },
+          {
+            "frame": 0.2,
+            "value": {
+              "__uuid__": "afd01b54-7033-4f2a-9b89-46903dc56c3d"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

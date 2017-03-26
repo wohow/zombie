@@ -4,6 +4,7 @@ var global = require('global');
 var EventDispatcher = require('EventDispatcher');
 var EventType = require('EventType');
 var Tip = require('Tip');
+var net = require('net');
 
 // 房间
 cc.Class({
@@ -33,7 +34,6 @@ cc.Class({
     	this.startBtnName.node.runAction(repeat);
     },
     onDestroy: function () {
-    	this.startBtnName.node.stopAllActions();
     },
 
     onEnable: function () {
@@ -140,7 +140,7 @@ cc.Class({
     // 刷新队长按钮
     updateCaptainBtn: function (captainUid) {
         this.startBtn.interactable = (global.uid === captainUid);
-        this.startBtnName.string = (global.uid === captainUid) ? '点击开始游戏' : '等待队长开始游戏';
+        this.startBtnName.string = (global.uid === captainUid) ? '点击开始游戏' : '等待房主开始游戏';
     },
 
     // 刷新队长
@@ -154,5 +154,10 @@ cc.Class({
     updatePeoples: function () {
         this.playerCountTxt.string = '('+this.playerEntitys.length+')';
         this.ingameCountTxt.string = '('+this.ingameEntitys.length+')';
+    },
+
+    // 点击开始游戏
+    onClickStartGame: function () {
+        net.send('connector.roomHandler.startGame', {});
     }
 });

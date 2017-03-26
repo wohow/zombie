@@ -2,6 +2,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
+        bgNode: cc.Node,
         nicknameTxt: cc.Label,
         isCaptain: cc.Node,
     },
@@ -12,7 +13,7 @@ cc.Class({
     },
 
     setMe: function (isMe) {
-        this.node.color = isMe ? cc.c4(0,60,50,166) : cc.c4(0,0,0,166);
+        this.bgNode.color = isMe ? new cc.Color(19,34,21,166) : new cc.Color(0,0,0,166);
     },
 
     setCaptain: function (isCaptain) {

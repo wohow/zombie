@@ -40,6 +40,7 @@ exp.getRoom = function (id) {
 exp.removeRoom = function (id) {
 	for (var i = rooms.length - 1; i >= 0; i--) {
 		if(rooms[i].id === id){
+			rooms[i].close();
 			rooms.splice(i, 1);
 			console.log(id, ' 房间被删除');
 			return;

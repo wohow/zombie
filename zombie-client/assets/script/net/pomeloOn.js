@@ -51,6 +51,9 @@ cc.Class({
                         room.captainUid = data.captainUid;
                     }
                 break;
+                case 3:// 刷新房间状态
+                    room.status = data.roomStatus;
+                break;
             }
             EventDispatcher.dispatch(EventType.ON_UPDATEROOM, {room: room, data: data});
         });
@@ -59,5 +62,48 @@ cc.Class({
             EventDispatcher.dispatch(EventType.ON_CHATMSG, data);
         });
 
+        // 加载游戏
+        net.on('onLoadGame', function(data){
+            cc.director.loadScene('preload');// 直接跳转加载场景
+        });
+
+        // 更新加载游戏进度
+        net.on('onUpdateLoadGame', function (data) {
+            EventDispatcher.dispatch(EventType.ON_UPDATELOADGAME, data);
+        });
+
+        // 进入游戏
+        net.on('onEnterGame', function (data) {
+            var room = global.getCurRoom();
+            for (var i = data.roles.length - 1; i >= 0; i--) {
+                var role = data.roles[i];
+                var player = global.getRoomPlayer(room, role.uid);
+                // 设置游戏信息
+                player.fightData = role;
+            }
+            room.gameMapId = data.gameMapId;// 游戏地图
+
+            cc.director.loadScene('arena');// 直接跳转场景
+        });
+
+        // 每帧玩家的输入信息
+        net.on('onReveal', function (data) {
+            EventDispatcher.dispatch(EventType.ON_REVEAL, data);
+        });
+
+        // 同步玩家使用技能
+        net.on('onUseSkill', function (data) {
+            EventDispatcher.dispatch(EventType.ON_USESKILL, data);
+        });
+
+        // 同步玩家受到攻击
+        net.on('onHit', function (data) {
+            EventDispatcher.dispatch(EventType.ON_HIT, data);
+        });
+
+        // 同步玩家变异
+        net.on('onVariation', function (data) {
+            EventDispatcher.dispatch(EventType.ON_VARIATION, data);
+        });
     }
 });

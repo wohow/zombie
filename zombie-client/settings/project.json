@@ -1,16 +1,40 @@
 {
   "collision-matrix": [
     [
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      true,
       true
+    ],
+    [
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false
     ]
   ],
-  "design-resolution-height": 640,
-  "design-resolution-width": 960,
+  "design-resolution-height": 1056,
+  "design-resolution-width": 1920,
   "excluded-modules": [],
   "fit-height": true,
-  "fit-width": false,
+  "fit-width": true,
   "group-list": [
-    "default"
+    "default",
+    "skill",
+    "role",
+    "wall"
   ],
   "simulator-orientation": false,
   "simulator-resolution": {
