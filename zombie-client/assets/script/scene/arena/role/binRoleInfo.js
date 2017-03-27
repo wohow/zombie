@@ -1,6 +1,7 @@
 
 var MapInfo = require('MapInfo');
 var Tween = require('TweenLite');
+var Ease = require('EasePack');
 var ObjectPool = require('ObjectPool');
 
 var HPW = 50;
@@ -71,7 +72,7 @@ cc.Class({
     // 刷新指示器方向
     updateIndicator: function (dir) {
         Tween.killTweensOf(this.indicatorNode, true);
-        Tween.to(this.indicatorNode, 0.01, {rotation: dir});
+        Tween.to(this.indicatorNode, 0.01, {rotation: dir, ease: Ease.Linear.easeNone});
     },
 
     // 设置方向

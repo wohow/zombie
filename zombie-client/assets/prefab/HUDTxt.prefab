@@ -15,9 +15,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 0,
-      "b": 0,
+      "r": 235,
+      "g": 45,
+      "b": 212,
       "a": 255
     },
     "_cascadeOpacityEnabled": true,
@@ -30,7 +30,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 50,
-      "height": 14
+      "height": 20
     },
     "_children": [],
     "_rotationX": 0,
@@ -83,6 +83,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "-50",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -103,7 +104,7 @@
       "b": 0,
       "a": 255
     },
-    "_width": 1
+    "_width": 2
   },
   {
     "__type__": "cdfdajgup5ISoJVFqrH1Hrv",

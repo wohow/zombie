@@ -6,6 +6,7 @@ var EventType = require('EventType');
 var consts = require('consts');
 var Tween = require('TweenLite');
 var Ease = require('EasePack');
+var MapInfo = require('MapInfo');
 
 
 // 地图控制器
@@ -23,18 +24,14 @@ cc.Class({
         infectionSpr: cc.Sprite,// 感染提示
     },
 
-    onLoad: function () {
-        this.mapInfo = this.node.getComponent('MapInfo');
-    },
-
     init: function (room, mapAsset) {
         this.room = room;
 
-        this.mapInfo.initMap(mapAsset);
+        MapInfo().initMap(mapAsset);
         this.initRole();
         this.node.on(cc.Node.EventType.MOUSE_DOWN, this.onMouseDown, this);
         this.node.on(cc.Node.EventType.MOUSE_MOVE, this.onMouseMove, this);
-        this.updateUI(consts.HERO[global.heroId].hero);
+        this.setSkillInfo(consts.HERO[global.heroId].hero);
 
         var self = this;
         self.revealCallback = function (data) {
@@ -85,7 +82,7 @@ cc.Class({
         for (var i = this.room.players.length - 1; i >= 0; i--) {
             let player = this.room.players[i];
             var prefab = cc.instantiate(this.heroPrefabs[player.heroId]);
-            this.mapInfo.addRole(prefab, player.fightData.position);
+            MapInfo().addRole(prefab, player.fightData.position);
             var bin = prefab.getComponent('binRoleInfo');
             bin.init(player);
             this.roles.push(bin);
@@ -115,7 +112,7 @@ cc.Class({
     },
 
     // 刷新UI
-    updateUI: function (data) {
+    setSkillInfo: function (data) {
         this.skillcds = data.skillcds;// 技能CD
         this.skilliscdins = [false, false];
     },
@@ -200,7 +197,7 @@ cc.Class({
                 continue;
             role.toVariation(variation.hp, variation.attack, variation.moveSpeed);
             if(global.uid === role.uid){
-                this.updateUI(consts.HERO[global.heroId].zombie);
+                this.setSkillInfo(consts.HERO[global.heroId].zombie);
             }
         }
     },

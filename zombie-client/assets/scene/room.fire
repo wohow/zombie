@@ -299,7 +299,8 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
-    "_N$string": "v 1.0.1",
+    "_spacingX": 0,
+    "_N$string": "v 0.1.0",
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$overflow": 1
@@ -308,7 +309,7 @@
     "__type__": "cc.Node",
     "_name": "nickname",
     "_objFlags": 0,
-    "_opacity": 80,
+    "_opacity": 90,
     "_color": {
       "__type__": "cc.Color",
       "r": 0,
@@ -373,6 +374,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "玩家名字",
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
@@ -447,6 +449,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "人数：1",
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
@@ -741,6 +744,7 @@
       "__uuid__": "da4e84b0-ebfb-4ee6-9583-e0be6f88eb20"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "英 雄",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -1209,6 +1213,7 @@
       "__uuid__": "da4e84b0-ebfb-4ee6-9583-e0be6f88eb20"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "房间列表",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -1583,6 +1588,7 @@
       "__uuid__": "da4e84b0-ebfb-4ee6-9583-e0be6f88eb20"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "创建房间",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -2053,6 +2059,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "房号",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -2147,6 +2154,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "房间名",
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
@@ -2241,6 +2249,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "地图",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -2335,6 +2344,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "人数",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -2429,6 +2439,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "状态",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -3198,6 +3209,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "房间名：",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -3672,6 +3684,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "随机地图",
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
@@ -4185,6 +4198,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "沙漠灰",
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
@@ -4688,6 +4702,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "大草坪",
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
@@ -4807,6 +4822,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "地图：",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -5132,6 +5148,7 @@
       "__uuid__": "da4e84b0-ebfb-4ee6-9583-e0be6f88eb20"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "创 建",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -5729,6 +5746,7 @@
       "__uuid__": "da4e84b0-ebfb-4ee6-9583-e0be6f88eb20"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "返 回",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -5851,6 +5869,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "[12] 房间名字",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -6120,6 +6139,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "12",
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
@@ -6142,6 +6162,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "房号：",
     "_N$horizontalAlign": 2,
     "_N$verticalAlign": 1,
@@ -6292,6 +6313,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "随机地图",
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
@@ -6314,6 +6336,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "地图：",
     "_N$horizontalAlign": 2,
     "_N$verticalAlign": 1,
@@ -6606,6 +6629,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "准 备 中",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -6697,6 +6721,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "(5)",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -7304,6 +7329,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "点击开始游戏",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -7624,6 +7650,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "游 戏 中",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -7715,6 +7742,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "(5)",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -8902,6 +8930,7 @@
       "__uuid__": "da4e84b0-ebfb-4ee6-9583-e0be6f88eb20"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "发送",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -9456,6 +9485,7 @@
       "__uuid__": "da4e84b0-ebfb-4ee6-9583-e0be6f88eb20"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "返 回",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,

@@ -481,8 +481,8 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 204,
+      "r": 255,
+      "g": 255,
       "b": 255,
       "a": 255
     },
@@ -540,14 +540,15 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_actualFontSize": 14,
-    "_fontSize": 14,
+    "_actualFontSize": 12,
+    "_fontSize": 12,
     "_lineHeight": 14,
     "_enableWrapText": false,
     "_N$file": {
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "我的名字哈哈哈哈",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -563,12 +564,12 @@
     "_enabled": true,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 42,
+      "g": 42,
+      "b": 42,
       "a": 255
     },
-    "_width": 1
+    "_width": 2.5
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -655,6 +656,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "11",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -771,7 +773,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 50,
+      "width": 54,
       "height": 8
     },
     "_children": [],
@@ -863,7 +865,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 50,
-      "height": 8
+      "height": 4
     },
     "_children": [
       {
@@ -921,7 +923,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 50,
-      "height": 8
+      "height": 4
     },
     "_children": [],
     "_rotationX": 0,
@@ -1037,7 +1039,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 50,
-      "height": 8
+      "height": 4
     },
     "_children": [
       {
@@ -1098,7 +1100,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 40,
-      "height": 8
+      "height": 4
     },
     "_children": [],
     "_rotationX": 0,
@@ -1189,7 +1191,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 10,
-      "height": 8
+      "height": 4
     },
     "_children": [],
     "_rotationX": 0,
