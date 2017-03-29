@@ -78,8 +78,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1920,
-      "height": 1056
+      "width": 1344,
+      "height": 832
     },
     "_children": [
       {
@@ -101,8 +101,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 960,
-      "y": 528
+      "x": 672,
+      "y": 416
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -149,8 +149,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1920,
-      "height": 1056
+      "width": 1344,
+      "height": 832
     },
     "_children": [],
     "_rotationX": 0,
@@ -267,7 +267,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": 406
+      "y": 359
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -300,6 +300,7 @@
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
+    "_spacingX": 0,
     "_N$string": "",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -343,7 +344,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": 209
+      "y": 150
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -581,6 +582,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "输入你的名字",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -627,7 +629,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": -325
+      "y": -211
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -875,6 +877,7 @@
       "__uuid__": "da4e84b0-ebfb-4ee6-9583-e0be6f88eb20"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "确 定",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -938,8 +941,8 @@
     "_enabled": true,
     "_designResolution": {
       "__type__": "cc.Size",
-      "width": 1920,
-      "height": 1056
+      "width": 1344,
+      "height": 832
     },
     "_fitWidth": true,
     "_fitHeight": true
@@ -1118,8 +1121,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1920,
-      "height": 1056
+      "width": 1344,
+      "height": 832
     },
     "_children": [
       {
@@ -1132,8 +1135,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 960,
-      "y": 528
+      "x": 672,
+      "y": 416
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -1637,8 +1640,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1920,
-      "height": 1056
+      "width": 1344,
+      "height": 832
     },
     "_children": [
       {
@@ -1651,8 +1654,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 960,
-      "y": 528
+      "x": 672,
+      "y": 416
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -1698,8 +1701,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 486,
-      "height": 100
+      "width": 406,
+      "height": 70
     },
     "_children": [
       {
@@ -1715,8 +1718,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 28,
-      "y": 606
+      "x": 0,
+      "y": 456
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -1759,8 +1762,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 480,
-      "height": 100
+      "width": 400,
+      "height": 70
     },
     "_children": [],
     "_rotationX": 0,
@@ -1850,8 +1853,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 460,
-      "height": 80
+      "width": 380,
+      "height": 60
     },
     "_children": [],
     "_rotationX": 0,
@@ -1890,14 +1893,15 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_actualFontSize": 40,
-    "_fontSize": 40,
-    "_lineHeight": 40,
+    "_actualFontSize": 30,
+    "_fontSize": 30,
+    "_lineHeight": 30,
     "_enableWrapText": true,
     "_N$file": {
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "你好",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -1991,8 +1995,8 @@
     "contetTxt": {
       "__id__": 56
     },
-    "hidePos": 606,
-    "showPos": 450
+    "hidePos": 456,
+    "showPos": 364
   },
   {
     "__type__": "cc.PrefabInfo",

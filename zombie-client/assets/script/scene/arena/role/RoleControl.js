@@ -20,6 +20,7 @@ cc.Class({
         direction = {x:0, y:0};
         this.status = 0; // 0.闲置 1.行走
         this.indicatorPos = cc.p(0,0);
+        this.mouseLocation = cc.p(0,0);
         this.pendingInputs = [];
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
@@ -51,7 +52,7 @@ cc.Class({
         });
     },
     onMouseMove: function (event) {
-        this.indicatorPos = event.getLocation();
+        this.mouseLocation = event.getLocation();
     },
 
     onKeyDown: function(event){
@@ -84,6 +85,7 @@ cc.Class({
 
     update: function(dt){
         // 刷新指示器
+        this.indicatorPos = this.mapControl.node.convertToNodeSpace(this.mouseLocation);
         var indicatorDir = 90 - utils.rotation(this.node.position, this.indicatorPos);
         this.roleInfo.updateIndicator(indicatorDir);
 

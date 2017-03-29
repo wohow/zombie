@@ -29,7 +29,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1360,
+      "width": 1160,
       "height": 50
     },
     "_children": [
@@ -115,7 +115,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -616,
+      "x": -520,
       "y": 0
     },
     "_skewX": 0,
@@ -153,6 +153,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "房号",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -192,7 +193,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 480,
+      "width": 400,
       "height": 35
     },
     "_children": [],
@@ -202,7 +203,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -310,
+      "x": -250,
       "y": 0
     },
     "_skewX": 0,
@@ -240,6 +241,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "房间名",
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
@@ -289,7 +291,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 67,
+      "x": 80,
       "y": 0
     },
     "_skewX": 0,
@@ -327,6 +329,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "地图",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -376,7 +379,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 246,
+      "x": 260,
       "y": 0
     },
     "_skewX": 0,
@@ -414,6 +417,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "人数",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -463,7 +467,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 398,
+      "x": 410,
       "y": 0
     },
     "_skewX": 0,
@@ -501,6 +505,7 @@
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "状态",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -554,7 +559,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 574,
+      "x": 520,
       "y": 0
     },
     "_skewX": 0,
@@ -649,6 +654,7 @@
       "__uuid__": "da4e84b0-ebfb-4ee6-9583-e0be6f88eb20"
     },
     "_isSystemFontUsed": false,
+    "_spacingX": 0,
     "_N$string": "加入",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,

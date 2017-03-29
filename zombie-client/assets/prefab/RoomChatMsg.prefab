@@ -29,7 +29,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 550,
+      "width": 400,
       "height": 24
     },
     "_children": [],
@@ -77,7 +77,7 @@
     "_N$font": {
       "__uuid__": "45b253b9-a514-46bc-83d0-4f813c1a2211"
     },
-    "_N$maxWidth": 550,
+    "_N$maxWidth": 400,
     "_N$lineHeight": 24,
     "_N$imageAtlas": null
   },

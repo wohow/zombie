@@ -42,8 +42,8 @@ cc.Class({
             self.onUseSkill(data.uid, data.input);
         };
         EventDispatcher.listen(EventType.ON_USESKILL, self.onuseskillCallback);
-        self.onhitCallback = function (data) {
-            self.onHit(data.uid, data.damage, data.hp);
+        self.onhurtCallback = function (data) {
+            self.onHurt(data.uid, data.damage, data.hp);
             if(data.variation){// 直接变异
                 self.onVariation([data.variation]);
             }
@@ -51,7 +51,7 @@ cc.Class({
                 self.infectionHint(data.infection);
             }
         };
-        EventDispatcher.listen(EventType.ON_HIT, self.onhitCallback);
+        EventDispatcher.listen(EventType.ON_HURT, self.onhurtCallback);
         self.onvariationCallback = function (data) {
             self.onVariation(data.variations);
         };
@@ -61,7 +61,7 @@ cc.Class({
     close: function (){
         EventDispatcher.remove(EventType.ON_REVEAL, this.revealCallback);
         EventDispatcher.remove(EventType.ON_USESKILL, this.onuseskillCallback);
-        EventDispatcher.remove(EventType.ON_HIT, this.onhitCallback);
+        EventDispatcher.remove(EventType.ON_HURT, this.onhurtCallback);
         EventDispatcher.remove(EventType.ON_VARIATION, this.onvariationCallback);
 
         this.node.off(cc.Node.EventType.MOUSE_DOWN, this.onMouseDown, this);
@@ -93,6 +93,7 @@ cc.Class({
         }
 
         this.roleControl.init(this);
+        this.getComponent('CameraFollow').setTarget(this.roleControl.node);
     },
 
     getRole: function(uid){
@@ -181,10 +182,10 @@ cc.Class({
     },
 
     // 玩家受到攻击
-    onHit: function(uid, damage, hp) {
+    onHurt: function(uid, damage, hp) {
         var role = this.getRole(uid);
         if(role){
-            role.hit(damage, hp);
+            role.hurt(damage, hp);
         }
     },
 

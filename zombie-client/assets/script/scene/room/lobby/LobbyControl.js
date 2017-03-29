@@ -27,7 +27,7 @@ cc.Class({
     onEnable: function () {
         this.curIndex = 0;
         this.contents[0].y = 0;
-        this.contents[1].y = 800;
+        this.contents[1].y = 658;
         this.menus[0].isChecked = true;
         this.menus[1].isChecked = false;
         this.listUI.init();
@@ -71,12 +71,12 @@ cc.Class({
         var content0 = this.contents[this.curIndex];
         var content1 = this.contents[index];
         content0.y = 0;
-        content1.y = 800;
+        content1.y = 658;
         this.curIndex = index;
 
         let tl = new Timeline();
         tl.add([
-            Tween.to(content0, 0.25, {y: -800}),
+            Tween.to(content0, 0.25, {y: -658}),
             Tween.to(content1, 0.25, {y: 0, onComplete: ()=>{
                 this.maskNode.active = false;
                 if(index === 1){

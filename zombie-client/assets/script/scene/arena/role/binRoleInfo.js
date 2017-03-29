@@ -1,5 +1,6 @@
 
 var MapInfo = require('MapInfo');
+var Timeline = require('TimelineLite');
 var Tween = require('TweenLite');
 var Ease = require('EasePack');
 var ObjectPool = require('ObjectPool');
@@ -25,6 +26,7 @@ cc.Class({
 
     onLoad: function () {
         this.indicatorNode.active = false;
+        this.entitySpriteNode = this.entity.getChildByName('sprite');
     },
 
     init: function (data) {
@@ -41,6 +43,8 @@ cc.Class({
         this.isPlayAnim = false;
         // 是否死亡
         this.isDie = false;
+        // 是否僵尸
+        this.isZombie = 0;
     },
 
     wrapAnimName: function(name){
@@ -133,10 +137,10 @@ cc.Class({
         this.playAnim('idle');
     },
 
-    // 收到攻击
-    hit: function (damage, hp) {
+    // 受到攻击
+    hurt: function (damage, hp) {
         this.isPlayAnim = true;
-        this.isDie = (hp <= 0 && this.maxHp === this.variation);
+        this.isDie = (hp <= 0 && this.isZombie);
         this.updateHp(hp);
         // 创建HUD
         MapInfo().addHUD(cc.p(this.node.x, this.node.y+60), '-'+damage);
@@ -146,11 +150,18 @@ cc.Class({
                 this.collisions[i].enabled = false;
             }
 
-        } else {// 播放受击动画
-            var self = this;
-            setTimeout(function(){
-                self.playAnimFinished();
-            }, 500);
+        } else {// 播放受击动画 RED -> WHITE
+            // this.entitySpriteNode.color = cc.Color.RED;
+            // setTimeout(()=>{
+            //     this.entitySpriteNode.color = cc.Color.WHITE;
+            //     this.playAnimFinished();
+            // }, 200);
+            this.entitySpriteNode.stopAllActions();
+            this.entitySpriteNode.color = cc.Color.WHITE;
+            var atc1 = this.isZombie ? cc.tintTo(0.1, 255, 0, 0) : cc.tintTo(0.1, 0, 255, 0);
+            var atc2 = cc.tintTo(0.1, 255, 255, 255);
+            var atc3 = cc.callFunc(this.playAnimFinished, this);
+            this.entitySpriteNode.runAction(cc.sequence(atc1, atc2, atc3));
         }
     },
 
@@ -159,6 +170,7 @@ cc.Class({
         this.isPlayAnim = true;
         this.maxHp = hp;
         this.variation = hp;
+        this.isZombie = 1;
         this.initHpBar();
         // 播放变异动画
 

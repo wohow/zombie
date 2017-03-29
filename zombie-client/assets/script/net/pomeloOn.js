@@ -98,7 +98,7 @@ cc.Class({
 
         // 同步玩家受到攻击
         net.on('onHit', function (data) {
-            EventDispatcher.dispatch(EventType.ON_HIT, data);
+            EventDispatcher.dispatch(EventType.ON_HURT, data);
         });
 
         // 同步玩家变异
