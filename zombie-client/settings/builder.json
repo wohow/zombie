@@ -19,6 +19,6 @@
   "privateKey": "",
   "renderMode": "0",
   "startScene": "d93adaaa-e836-411d-bb08-448d4413046d",
-  "title": "zombie-client",
-  "webOrientation": "landscape"
+  "title": "zombie",
+  "webOrientation": "auto"
 }
