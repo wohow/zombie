@@ -40,9 +40,10 @@ cc.Class({
             return;
         if(!this.mapControl.isCanUseSkill(skillId))
             return;
+        var startPos = this.roleInfo.getIndicatorPosition();
         var input = {
             skillId: skillId,
-            startPos: {x: this.node.x, y: this.node.y},
+            startPos: {x: startPos.x, y: startPos.y},
             targetPos: {x: this.indicatorPos.x, y: this.indicatorPos.y},
         };
         net.send('connector.gameHandler.processInputs', {
@@ -91,6 +92,7 @@ cc.Class({
 
         if(this.roleInfo.isPlayAnim || this.roleInfo.isDie)
             return;
+        // 发送移动信息
         if(this.status === 0)
             return;
         var new_dt = dt;
@@ -123,7 +125,6 @@ cc.Class({
         // 记录每次的操作指令 方便后面做调和
         this.pendingInputs.push(input);
     },
-
 
     // 服务器调和
     serverReconciliation: function (lastSequenceNumber) {

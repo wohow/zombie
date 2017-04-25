@@ -49,7 +49,7 @@ exp.startupGame = function (room) {
 		let role = new Role({
 			uid: player.uid,
 			heroId: player.heroId,
-			position: {x: 48, y: 48},
+			position: {x: 112, y: 112},
 		});
 		roleDatas.push(role.strip());
 

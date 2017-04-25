@@ -1,0 +1,68 @@
+
+hero_001.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+body
+  rotate: false
+  xy: 2, 17
+  size: 25, 27
+  orig: 32, 32
+  offset: 5, 2
+  index: -1
+gebo
+  rotate: false
+  xy: 33, 5
+  size: 4, 7
+  orig: 4, 7
+  offset: 0, 0
+  index: -1
+jian01
+  rotate: false
+  xy: 2, 7
+  size: 19, 3
+  orig: 19, 3
+  offset: 0, 0
+  index: -1
+pifeng
+  rotate: false
+  xy: 23, 2
+  size: 8, 6
+  orig: 8, 6
+  offset: 0, 0
+  index: -1
+tui_1
+  rotate: false
+  xy: 24, 10
+  size: 3, 5
+  orig: 3, 5
+  offset: 0, 0
+  index: -1
+tui_2
+  rotate: false
+  xy: 39, 8
+  size: 2, 4
+  orig: 2, 4
+  offset: 0, 0
+  index: -1
+weapon
+  rotate: false
+  xy: 29, 14
+  size: 13, 30
+  orig: 32, 32
+  offset: 4, 1
+  index: -1
+yan_1
+  rotate: false
+  xy: 2, 2
+  size: 4, 3
+  orig: 4, 3
+  offset: 0, 0
+  index: -1
+yingzi
+  rotate: false
+  xy: 2, 12
+  size: 20, 3
+  orig: 24, 3
+  offset: 2, 0
+  index: -1

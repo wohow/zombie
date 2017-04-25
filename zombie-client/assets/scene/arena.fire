@@ -103,6 +103,9 @@
       },
       {
         "__id__": 53
+      },
+      {
+        "__id__": 54
       }
     ],
     "_prefab": null,
@@ -837,7 +840,7 @@
     "_enabled": true,
     "heroPrefabs": [
       {
-        "__uuid__": "9c988998-dd22-4676-8332-c97443d28931"
+        "__uuid__": "633bac69-5c24-4527-b519-29c01d22f222"
       }
     ],
     "zombiePrefabs": [],
@@ -2061,5 +2064,14 @@
     "mapControl": {
       "__id__": 22
     }
+  },
+  {
+    "__type__": "7d3604jOKRL+qMU40OiC5PF",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2
+    },
+    "_enabled": true
   }
 ]

@@ -8,9 +8,8 @@ cc.Class({
     properties: {
     },
 
-    // use this for initialization
     onLoad: function () {
     	// 关闭抗锯齿 设置一次就可以了
-        // cc.view.enableAntiAlias(false);
-    },
+        cc.view.enableAntiAlias(false);
+    }
 });

@@ -2,7 +2,6 @@
 var MapInfo = require('MapInfo');
 var Timeline = require('TimelineLite');
 var Tween = require('TweenLite');
-var Ease = require('EasePack');
 var ObjectPool = require('ObjectPool');
 
 var HPW = 50;
@@ -14,7 +13,6 @@ cc.Class({
     properties: {
         entity: cc.Node,
         indicatorNode: cc.Node,// 指示器 
-        animation: cc.Animation,
         collisions: [cc.BoxCollider],// 碰撞列表
 
         nicknameTxt: cc.Label,
@@ -27,6 +25,11 @@ cc.Class({
     onLoad: function () {
         this.indicatorNode.active = false;
         this.entitySpriteNode = this.entity.getChildByName('sprite');
+        this.spine = this.entitySpriteNode.getComponent('sp.Skeleton');
+        this.spine.setCompleteListener((trackEntry, loopCount) => {
+            var animationName = trackEntry.animation ? trackEntry.animation.name : "";
+            this.playAnimFinished(animationName);
+        });
     },
 
     init: function (data) {
@@ -76,7 +79,11 @@ cc.Class({
     // 刷新指示器方向
     updateIndicator: function (dir) {
         Tween.killTweensOf(this.indicatorNode, true);
-        Tween.to(this.indicatorNode, 0.01, {rotation: dir, ease: Ease.Linear.easeNone});
+        Tween.to(this.indicatorNode, 0.01, {rotation: dir, ease: Linear.easeNone});
+    },
+    // 获取指示器位置
+    getIndicatorPosition: function () {
+        return cc.p(this.node.x+this.indicatorNode.x, this.node.y+this.indicatorNode.y);
     },
 
     // 设置方向
@@ -87,13 +94,17 @@ cc.Class({
     },
     // 播放动画
     playAnim: function(animName){
-        var name = this.wrapAnimName(animName);
-        var animState = this.animation.getAnimationState(name);
-        if(!animState)
+        // var name = this.wrapAnimName(animName);
+        // var animState = this.animation.getAnimationState(name);
+        // if(!animState)
+        //     return;
+        // if(!animState.isPlaying){
+        //     this.animation.play(name);
+        // }
+        var oldAnim = this.spine.animation;
+        if(oldAnim === animName)
             return;
-        if(!animState.isPlaying){
-            this.animation.play(name);
-        }
+        this.spine.setAnimation(0, animName, true);
     },
 
     // 是否可以移动
@@ -119,8 +130,9 @@ cc.Class({
     // 使用技能
     useSkill: function (skillId, startPos, targetPos) {
         this.isPlayAnim = true;
-        var animState = this.animation.play(this.wrapAnimName('attack'));
-        animState.on('finished', this.playAnimFinished, this);
+        // var animState = this.animation.play(this.wrapAnimName('attack'));
+        // animState.on('finished', this.playAnimFinished, this);
+        this.spine.setAnimation(0, 'attack', false);
         // 改变角色方向
         this.setFlipX(targetPos.x - startPos.x);
         // 创建一个子弹
@@ -132,9 +144,20 @@ cc.Class({
             range: 300
         });
     },
-    playAnimFinished: function () {
-        this.isPlayAnim = false;
-        this.playAnim('idle');
+    playAnimFinished: function (animationName) {
+        switch(animationName){
+            case 'idle':
+            case 'run':
+            break;
+            case 'attack':
+                this.isPlayAnim = false;
+                this.playAnim('idle');
+            break;
+            case 'die':
+                this.isPlayAnim = false;
+                this.playAnim('idle');
+            break;
+        }
     },
 
     // 受到攻击
@@ -173,13 +196,8 @@ cc.Class({
         this.isZombie = 1;
         this.initHpBar();
         // 播放变异动画
-
+        this.playAnim('die');
         // 设置变异模型
-
-        var self = this;
-        setTimeout(function(){
-            self.playAnimFinished();
-        }, 500);
     }
 
 });

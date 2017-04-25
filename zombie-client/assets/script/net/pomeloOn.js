@@ -105,5 +105,6 @@ cc.Class({
         net.on('onVariation', function (data) {
             EventDispatcher.dispatch(EventType.ON_VARIATION, data);
         });
+
     }
 });

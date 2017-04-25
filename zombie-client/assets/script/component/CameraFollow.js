@@ -29,7 +29,6 @@ cc.Class({
     // 设置目标
     setTarget: function (node) {
         this.target = node;
-        console.log(this.node.convertToWorldSpaceAR(this.target.position));
     },
 
 

@@ -142,8 +142,6 @@ cc.Class({
         }});
     },
 
-
-
     // 世界玩家状态更新
     onUpdateWorldState: function (worldStates) {
         for (var i = worldStates.length - 1; i >= 0; i--) {
